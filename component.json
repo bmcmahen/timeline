@@ -1,0 +1,30 @@
+{
+  "name": "timeline",
+  "repo": "bmcmahen/timeline",
+  "description": "facebook style timeline",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/scroll-to": "*",
+    "component/type": "*",
+    "component/domify": "*",
+    "moment/moment": "*",
+    "desandro/imagesloaded": "*",
+    "component/emitter": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "masonry.js"
+  ],
+  "styles": [
+    "timeline.css"
+  ],
+  "templates": [
+    "templates/timeline.html",
+    "templates/item.html",
+    "templates/year.html"
+  ]
+}

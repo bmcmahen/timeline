@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href='build/build.css' rel='stylesheet'>
+</head>
+
+<style>
+img {
+  max-width: 100%;
+}
+</style>
+<body>
+
+<div id='container'></div>
+
+<script src='build/build.js'></script>
+<script>
+  var el = document.getElementById('container');
+  var docs = [{ 
+    date: 1954,
+    txt: '1954 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  }, { 
+    date: 1945,
+    txt: '1945 -hi there',
+    img: 'build/testimg.jpg'
+  }, { 
+    date: 1948,
+    txt: '1948 - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+  }, { 
+    date: 2003,
+    txt: '2003 - super duper'
+  }, { 
+    date: 2001,
+    txt: '2001 - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi odio mauris, auctor ut varius non, tempus nec nisi. Quisque at tellus risus. Aliquam erat volutpat. Proin et dolor magna. Sed vel metus justo. Mauris eu metus massa. Duis viverra ultricies nisl, ut pharetra eros hendrerit non. Phasellus laoreet libero non eros rhoncus sed iaculis ante molestie. Etiam arcu purus, dictum a tincidunt id, ornare sed orci. Curabitur ornare ornare nulla quis tincidunt. Morbi nisi elit, mattis nec bibendum vel, facilisis eu ipsum. Phasellus non dolor erat, in placerat lacus. Aliquam pulvinar, est eu commodo vulputate, neque elit molestie lorem, sed vestibulum felis erat et risus. Nulla non velit odio.'
+  },
+  { 
+    date: 1900,
+    txt: '1900'
+  }, { 
+    date: 1865,
+    txt: '1865'
+  }, { 
+    date: 1867,
+    txt: '1867'
+  },{ 
+    date: 1869,
+    txt: '1869'
+  }];
+  var Timeline = require('timeline');
+  // make a slider plugin 
+  var timeline = new Timeline(el)
+    .data(docs, 'date')
+    .render(function(obj, el){
+      if (obj.img) {
+        el.classList.add('timeline-image');
+      }
+      var img = obj.img ? '<img src="'+ obj.img + '">' : null;
+      return '<div>' + obj.txt + img +'</div>';
+    });
+</script>
+
+</body>
+</html>
